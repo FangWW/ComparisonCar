@@ -2,6 +2,7 @@ package com.comparisoncar.vhtableview;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 /**
  * Created by jian on 2016/7/20.
@@ -21,7 +22,11 @@ public interface VHBaseAdapter {
     //表格正文的view，行和列都从0开始，宽度的话在载入的时候，默认会是以标题行各列的宽度，高度的话自适应
     public View getTableCellView(int contentRow, int contentColum, View view, ViewGroup parent);
 
+    //每一行的标题
     public View getTableRowTitlrView(int contentRow, View view);
+
+    //footerview
+    public View getFooterView(ListView view);
 
     public Object getItem(int contentRow);
 

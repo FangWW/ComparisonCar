@@ -2,12 +2,17 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape>
+            <solid android:color="#FFFFFF"/>
+            <corners/>
             <stroke android:width="0.1px" android:color="@android:color/darker_gray"/>
         </shape>
     </item>
-    <item android:right="1px">
+    <item android:bottom="1px" android:right="1px">
         <shape>
             <solid android:color="#FFFFFF"/>
+            <corners
+                android:topLeftRadius="0.1px" android:topRightRadius="0.1px"/>
+            <stroke android:width="0.1px" android:color="#ffffffff"/>
         </shape>
     </item>
 </layer-list>

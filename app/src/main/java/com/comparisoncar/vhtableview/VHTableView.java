@@ -150,6 +150,9 @@ public class VHTableView extends LinearLayout implements HListViewScrollView.Scr
         //设置间隔线为0，以便在view中自己定义间隔线
         listView.setDividerHeight(0);
         ContentAdapter adapter = new ContentAdapter(conentAdapter);
+
+        listView.addFooterView(conentAdapter.getFooterView(listView));
+
         listView.setAdapter(adapter);
 
         FrameLayout frameLayout = new FrameLayout(context);
