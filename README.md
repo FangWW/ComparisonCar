@@ -7,4 +7,4 @@
 在原框架基础上  增加了悬浮分组行头 和 表格底部视图
 
 
-![github](https://github.com/FangWW/ComparisonCar/blob/master/7276C7E1C2EE7ACC7A153FCF2F4340AE.gif?raw=true "github")
+![github](https://github.com/FangWW/ComparisonCar/blob/master/ezgif.com-resize.gif?raw=true "github")

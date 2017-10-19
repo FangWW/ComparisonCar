@@ -101,14 +101,14 @@ public class CarComparisonBean {
                  * value : POLO 2016款 1.4L 手动风尚型
                  */
 
-                private int specid;
+                private String specid;
                 private String value;
 
-                public int getSpecid() {
+                public String getSpecid() {
                     return specid;
                 }
 
-                public void setSpecid(int specid) {
+                public void setSpecid(String specid) {
                     this.specid = specid;
                 }
 
