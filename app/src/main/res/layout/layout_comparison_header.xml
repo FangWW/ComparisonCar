@@ -8,9 +8,23 @@
     android:orientation="horizontal">
     <ImageView
         android:id="@+id/img_del"
-        android:layout_width="20dp" android:layout_height="20dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_gravity="right"
-        android:src="@android:drawable/ic_delete"/>
+        android:src="@drawable/icon_comparsion_del"/>
+
+    <ImageView
+        android:id="@+id/iv_item_rank_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/img_add"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center|center_horizontal"
+        android:background="@drawable/icon_tianjia"/>
 
     <TextView
         android:id="@+id/tv_title"
@@ -18,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
         android:gravity="left"
+        android:textSize="11dp"
         tools:text="标题"
     />
 

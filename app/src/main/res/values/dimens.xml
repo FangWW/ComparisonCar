@@ -1,5 +1,81 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="ui_10_dip">10dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="user_radio_paddingsize">8dp</dimen>
+    <dimen name="tips_text_size">10sp</dimen>
+    <dimen name="bottom_bar_height">44dp</dimen>
+    <dimen name="text_size_lager">18sp</dimen>
+    <dimen name="text_size_32px">16sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_smaller">13sp</dimen>
+    <dimen name="text_size_ssmaller">12sp</dimen>
+    <dimen name="text_size_big_size">18sp</dimen>
+    <dimen name="normal_line_height">44dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="tv_shopname_width">160dp</dimen>
+    <dimen name="text_titlesize">16sp</dimen>
+    <dimen name="image_width">60dp</dimen>
+    <dimen name="textandiconmargin">10dp</dimen>
+    <dimen name="text_ss_size">11sp</dimen>
+    <dimen name="smaller_margin">4dp</dimen>
+    <dimen name="text_size_22px">11sp</dimen>
+    <dimen name="text_size_28px">14sp</dimen>
+    <dimen name="text_size_24px">12sp</dimen>
+    <dimen name="size_60px">30dp</dimen>
+    <dimen name="margin_20px">10dp</dimen>
+    <dimen name="size_40px">20dp</dimen>
+    <dimen name="vertical_margin">20dp</dimen>
+    <dimen name="activity_horizontal_margin_2">30dp</dimen>
+    <dimen name="shaidan_item_img_margin">10dp</dimen>
+    <dimen name="margin_24px">12dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_3dp">3dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="max_size">16sp</dimen>
+    <dimen name="small_size">12sp</dimen>
+    <!--<dimen name="activity_horizontal_margin">16dp</dimen>-->
+    <!--<dimen name="activity_vertical_margin">16dp</dimen>-->
+    <!--<dimen name="ad_viewpagerheight">120dp</dimen>-->
+    <!--<dimen name="user_radio_paddingsize">8dp</dimen>-->
+    <!--<dimen name="tips_text_size">13dp</dimen>-->
+    <!--<dimen name="tv_shopname_width">160dp</dimen>-->
+    <!--<dimen name="image_width">72dp</dimen>-->
+
+
+    <dimen name="find_car_detail_item_width">100dp</dimen>
+    <dimen name="text_size_12dp">12dp</dimen>
+    <dimen name="text_size_13sp">13dp</dimen>
+    <dimen name="text_size_14dp">14dp</dimen>
+    <dimen name="text_size_16dp">16dp</dimen>
+    <dimen name="text_size_18dp">18dp</dimen>
+    <dimen name="dimen_size_60dp">60dp</dimen>
+
+
+    <!--尺寸大小-->
+    <dimen name="dimen_size_3dp">3dp</dimen>
+    <dimen name="dimen_size_5dp">5dp</dimen>
+    <dimen name="dimen_size_10dp">10dp</dimen>
+    <dimen name="dimen_size_12dp">12dp</dimen>
+    <dimen name="dimen_size_13dp">13dp</dimen>
+    <dimen name="dimen_size_15dp">15dp</dimen>
+    <dimen name="dimen_size_30dp">30dp</dimen>
+    <dimen name="dimen_size_40dp">40dp</dimen>
+    <dimen name="dimen_size_20dp">20dp</dimen>
+    <dimen name="dimen_size_50dp">50dp</dimen>
+    <dimen name="dimen_size_70dp">70dp</dimen>
+    <dimen name="dimen_size_75dp">75dp</dimen>
+    <dimen name="dimen_size_95dp">95dp</dimen>
+
+
+    <dimen name="tabs_height">48dp</dimen>
+    <dimen name="viewpager_header_height">164dp</dimen>
+    <dimen name="space_middle">24dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

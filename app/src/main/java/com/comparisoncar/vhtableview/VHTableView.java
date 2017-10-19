@@ -2,6 +2,7 @@ package com.comparisoncar.vhtableview;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,8 @@ public class VHTableView extends LinearLayout implements HListViewScrollView.Scr
     private boolean showTitle;
     //第一列是否可移动
     private boolean firstColumnIsMove;
+
+    private OnUIScrollChanged mOnUIScrollChanged;
 
 
     //用于显示表格正文内容
@@ -200,11 +203,35 @@ public class VHTableView extends LinearLayout implements HListViewScrollView.Scr
 
     @Override
     public void onUIScrollChanged(int l, int t, int oldl, int oldt) {
+        if (mOnUIScrollChanged != null) {
+            HListViewScrollView hListViewScrollView = getFirstHListViewScrollView();
+            int maxScrollX = hListViewScrollView.getChildAt(0).getMeasuredWidth() - hListViewScrollView.getMeasuredWidth();
+            Log.e("www", l + "-" + t + "-" + oldl + "-" + oldt + "=" + maxScrollX + "=" + hListViewScrollView.getScrollX());
+            mOnUIScrollChanged.onUIScrollChanged(l, oldl, maxScrollX, hListViewScrollView.getScrollX());
+        }
         for (HListViewScrollView scrollView : mHScrollViews) {
             //防止重复滑动
             if (currentTouchView != scrollView)
                 scrollView.smoothScrollTo(l, t);
         }
+    }
+
+    public HListViewScrollView getFirstHListViewScrollView() {
+        return mHScrollViews.get(0);
+    }
+
+    public void onUIScrollChanged(int l, int t) {
+        for (HListViewScrollView scrollView : mHScrollViews) {
+            scrollView.smoothScrollTo(l, t);
+        }
+    }
+
+    public void setOnUIScrollChanged(OnUIScrollChanged onUIScrollChanged) {
+        mOnUIScrollChanged = onUIScrollChanged;
+    }
+
+    public interface OnUIScrollChanged {
+        public void onUIScrollChanged(int l, int oldl, int maxScrollX, int getScrollX);
     }
 
     public class ContentAdapter extends BaseAdapter {
@@ -249,6 +276,7 @@ public class VHTableView extends LinearLayout implements HListViewScrollView.Scr
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
+
             //更新每行的views的数据
             updateViews(conentAdapter, viewHolder, viewHolder.ll_row_title, viewHolder.ll_firstcolumn, viewHolder.ll_datagroup, position);
             //更熟的views数据后重新测量高度，取那一行的最大高度作为整行的高度
