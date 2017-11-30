@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/darker_gray"
     android:orientation="horizontal">
@@ -10,10 +10,9 @@
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dimen_title_height"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:layout_marginLeft="5dp"
         android:textSize="11dp"
         tools:text="标题"
     />
@@ -21,9 +20,8 @@
     <TextView
         android:id="@+id/tv_subtitle"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/dimen_title_height"
-        android:layout_marginRight="5dp"
-        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:textSize="11dp"
         tools:text="标题"
     />

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -31,6 +32,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isComparsionSame;//对比中
     private String ids;
     private int mScrollX;
+    private Button mBtnJump;
 
 
     public static void gotoHere(Activity act, int size) {
@@ -69,6 +72,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
         initData();
+
+        final Random random = new Random();
+        final int i = random.nextInt(contentAllData.size());
+        mBtnJump.setText("随机跳转到第" + i);
+        mBtnJump.setTag(i);
+        mBtnJump.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vht_table.setSelection((Integer) mBtnJump.getTag(), ((int) getResources().getDimension(R.dimen.dimen_title_height)));
+                int i = random.nextInt(contentAllData.size());
+                mBtnJump.setText("随机跳转到第" + i);
+                mBtnJump.setTag(i);
+            }
+        });
     }
 
     protected void initView() {
@@ -76,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         vht_table = (VHTableView) findViewById(R.id.vht_table);
         mImgLeft = (ImageView) findViewById(R.id.img_left);
         mImgRight = (ImageView) findViewById(R.id.img_right);
+        mBtnJump = (Button) findViewById(R.id.btn_jump);
         mImgLeft.setVisibility(View.GONE);
         mImgRight.setVisibility(View.GONE);
         vht_table.setOnUIScrollChanged(new VHTableView.OnUIScrollChanged() {
@@ -105,6 +123,12 @@ public class MainActivity extends AppCompatActivity {
                 scrollLastPoint(mScrollX - titleWidth);
             }
         });
+    }
+
+
+    public static int dip2px(Context context, float dipValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dipValue * scale + 0.5f);
     }
 
     protected void initData() {
@@ -431,7 +455,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
 //                            gotoHere(MainActivity.this, titleData.size() - 2);
-                            Toast.makeText(MainActivity.this,"添加数据",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "添加数据", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -530,8 +554,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public View getFooterView(ListView view) {
-
-            View footer = LayoutInflater.from(context).inflate(R.layout.layout_comparison_cell_header, null);
+            View footer = LayoutInflater.from(context).inflate(R.layout.layout_comparison_cell_footer, null);
             TextView tvTitle = (TextView) footer.findViewById(R.id.tv_title);
             TextView tvsubTitle = (TextView) footer.findViewById(R.id.tv_subtitle);
             footer.setBackgroundColor(getResources().getColor(R.color.white));

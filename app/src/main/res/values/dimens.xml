@@ -58,6 +58,7 @@
     <dimen name="dimen_size_60dp">60dp</dimen>
 
 
+    <dimen name="dimen_title_height">25dp</dimen>
     <!--尺寸大小-->
     <dimen name="dimen_size_3dp">3dp</dimen>
     <dimen name="dimen_size_5dp">5dp</dimen>

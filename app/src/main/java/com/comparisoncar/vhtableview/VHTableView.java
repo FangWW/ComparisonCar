@@ -188,6 +188,33 @@ public class VHTableView extends LinearLayout implements HListViewScrollView.Scr
         mHScrollViews.add(hScrollView);
     }
 
+    public void setSelection(final int position, int titleHeight) {//
+        if (listView != null) {
+            View view = listView.getAdapter().getView(position, null, null);
+            if (view != null && view.getTag() instanceof ViewHolder) {
+                ViewHolder viewHolde = ((ViewHolder) view.getTag());
+                if (viewHolde.ll_row_title.getChildCount() > 0 && viewHolde.ll_row_title.getChildAt(0).getVisibility() == VISIBLE) {
+                    titleHeight = 0;
+                }
+            }
+            listView.setSelectionFromTop(position, titleHeight);
+            if (currentTouchView != null) {
+                currentTouchView.post(new Runnable() {
+                    @Override
+                    public void run() {//重新刷新对齐
+                        onScrollChanged((int) currentTouchView.getScrollX(), 0);
+                    }
+                });
+            }
+        }
+    }
+
+    //不带动画
+    public void onScrollChanged(int l, int t) {
+        for (HListViewScrollView scrollView : mHScrollViews) {
+            scrollView.scrollTo(l, t);
+        }
+    }
 
     private HListViewScrollView currentTouchView;
 
